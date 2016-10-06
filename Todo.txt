@@ -1,0 +1,12 @@
+git branch
+
+rails g scaffold todo_list title:string description:text
+rake db:migrate
+
+rails g model todo_item content:string todo_list:references
+rake db:migrate
+
+rails g controller todo_items
+
+rails g migration add_completed_at_to_todo_items completed_at:datetime
+rake db:migrate
